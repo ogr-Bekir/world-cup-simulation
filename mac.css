@@ -1,0 +1,50 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: '-apple-system', sans-serif; }
+body { background-color: #0b0f19; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; padding: 10px; }
+
+.phone-wrapper {
+    width: 100%; max-width: 420px; aspect-ratio: 9 / 16;
+    background: radial-gradient(circle at top, #1a2a42 0%, #030a1e 70%);
+    border: 6px solid #1e293b; border-radius: 32px;
+    display: flex; flex-direction: column; overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+/* Üst Başlık */
+.match-header { background: #071635; padding: 15px 0 10px; text-align: center; border-bottom: 2px solid #1e293b;}
+.competition-name { color: #d4af37; font-size: 1.1rem; font-weight: 900; letter-spacing: 1px; }
+.matchday-info { color: #00d2ff; font-size: 0.8rem; font-weight: 800; letter-spacing: 2px; margin-top: 4px; }
+
+/* Skorbord */
+.scoreboard-container { display: flex; justify-content: space-between; align-items: center; padding: 30px 20px; background: rgba(0, 0, 0, 0.3); border-bottom: 1px solid #1e293b;}
+.team-panel { display: flex; flex-direction: column; align-items: center; width: 30%; }
+.big-flag { width: 55px; height: 40px; border-radius: 4px; object-fit: cover; border: 2px solid rgba(255,255,255,0.2); box-shadow: 0 4px 10px rgba(0,0,0,0.5); margin-bottom: 8px;}
+.team-panel h2 { color: white; font-size: 1.5rem; font-weight: 900; letter-spacing: 2px; }
+
+.score-panel { display: flex; flex-direction: column; align-items: center; width: 40%; }
+.time-indicator { background: #ef4444; color: white; font-size: 0.8rem; font-weight: 900; padding: 4px 12px; border-radius: 4px; margin-bottom: 5px; box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);}
+.score-numbers { display: flex; align-items: center; gap: 10px; }
+.score-numbers span { color: white; font-size: 3.5rem; font-weight: 900; text-shadow: 0 4px 10px rgba(0,0,0,0.8); }
+.score-numbers .divider { color: #94a3b8; font-size: 2rem; font-weight: 400; }
+
+/* Maç Olayları (Timeline Yapısı) */
+.match-events-container { flex: 1; padding: 20px 0; display: flex; flex-direction: column; overflow: hidden; }
+.events-title { color: #94a3b8; font-size: 0.85rem; font-weight: 800; border-bottom: 1px solid #1e293b; padding-bottom: 8px; margin-bottom: 10px; text-align: center; }
+.events-list { flex: 1; overflow-y: auto; display: flex; flex-direction: column; }
+.events-list::-webkit-scrollbar { width: 4px; }
+.events-list::-webkit-scrollbar-thumb { background: #1e293b; }
+
+/* İkiye Bölünmüş Satır Tasarımı */
+.goal-row { display: flex; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+.goal-half { width: 50%; display: flex; align-items: center; padding: 8px 10px; font-size: 0.8rem; font-weight: 700; color: white; }
+.goal-home { justify-content: flex-end; border-right: 1px solid rgba(255, 255, 255, 0.1); text-align: right;}
+.goal-away { justify-content: flex-start; text-align: left;}
+
+.goal-icon { margin: 0 6px; font-size: 0.9rem; }
+.goal-min { color: #d4af37; font-weight: 900; margin: 0 6px; }
+
+/* Alt Buton */
+.bottom-action { padding: 10px 15px; background: #030a1e; border-top: 1px solid #1e293b; }
+.action-button { width: 100%; padding: 14px; font-size: 0.9rem; font-weight: 900; color: white; background: linear-gradient(90deg, #00d2ff, #0055ff); border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 15px rgba(0, 85, 255, 0.4); }
+.hidden { display: none !important; }

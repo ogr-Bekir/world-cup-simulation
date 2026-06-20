@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadro Kur - 2026 Dünya Kupası</title>
+    <link rel="stylesheet" href="kadro.css">
+</head>
+<body>
+
+    <div class="phone-wrapper">
+        
+        <header class="squad-header">
+            <div class="my-team-info">
+                <div class="team-identity">
+                    <img id="my-team-flag" src="" alt="Bayrak" class="header-flag">
+                    <h2 id="my-team-name">Takım...</h2>
+                </div>
+                <div class="team-ratings">
+                    <div class="rating-box"><span>DEF</span><strong id="stat-def">0</strong></div>
+                    <div class="rating-box"><span>MID</span><strong id="stat-mid">0</strong></div>
+                    <div class="rating-box"><span>ATT</span><strong id="stat-att">0</strong></div>
+                </div>
+            </div>
+            
+            <div class="formation-selector" id="formation-box">
+                <select id="formation">
+                    <option value="4-3-3">4-3-3</option>
+                    <option value="4-4-2">4-4-2</option>
+                    <option value="3-5-2">3-5-2</option>
+                    <option value="4-2-3-1">4-2-3-1</option>
+                </select>
+            </div>
+        </header>
+
+        <div class="top-section">
+            <div class="pitch-container">
+                <div class="pitch" id="pitch"></div>
+            </div>
+
+            <div class="squad-roster">
+                <div class="roster-header">
+                    <h3 class="roster-title">KADRO</h3>
+                    <span id="player-count">0/11</span>
+                </div>
+                <div id="roster-list"></div>
+            </div>
+        </div>
+
+        <div class="bottom-section" id="draft-dashboard">
+            
+            <div id="action-box">
+                <button id="draw-btn" class="action-button">İLK KURAYI ÇEK (BAŞLA)</button>
+            </div>
+
+            <div id="draft-animation" class="hidden">
+                <h3 id="rolling-country">Ülke Seçiliyor...</h3>
+            </div>
+
+            <div id="player-selection-list" class="hidden"></div>
+            
+            <div id="status-text" class="hidden">
+                Sahadan yanıp sönen bir pozisyon seç...
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="kadro.js"></script>
+</body>
+</html> 

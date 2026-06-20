@@ -1,0 +1,78 @@
+/* Temel Sıfırlamalar */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: '-apple-system', sans-serif; }
+body { background-color: #0b0f19; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; padding: 10px; }
+
+/* 9:16 Telefon Ekranı */
+.phone-wrapper {
+    width: 100%; max-width: 420px; aspect-ratio: 9 / 16;
+    background: #030a1e; border: 6px solid #1e293b; border-radius: 32px;
+    display: flex; flex-direction: column; overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+/* Üst Başlık ve Reytingler */
+.squad-header { background: linear-gradient(180deg, #0a193c, #0d2353); padding: 10px 15px; border-bottom: 2px solid #0055ff; display: flex; justify-content: space-between; align-items: center; z-index: 5; flex-shrink: 0;}
+.my-team-info { display: flex; flex-direction: column; gap: 6px; }
+.team-identity { display: flex; align-items: center; gap: 8px; }
+.header-flag { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid #00d2ff; }
+#my-team-name { color: white; font-size: 0.9rem; font-weight: 800; }
+
+.team-ratings { display: flex; gap: 6px; }
+.rating-box { display: flex; align-items: center; background: #1e293b; padding: 2px 6px; border-radius: 4px; border: 1px solid #334155; }
+.rating-box span { font-size: 0.55rem; color: #94a3b8; margin-right: 4px; font-weight: bold;}
+.rating-box strong { font-size: 0.75rem; color: #00d2ff; font-weight: 900;}
+
+.formation-selector select { background: #1e293b; color: white; border: 1px solid #0055ff; border-radius: 6px; padding: 4px; font-weight: bold; cursor: pointer; font-size: 0.75rem;}
+
+/* --- ÜST BÖLÜM (Saha + Kadro) --- */
+.top-section { display: flex; height: 48%; width: 100%; border-bottom: 2px solid #1e293b; flex-shrink: 0; }
+.pitch-container { width: 50%; padding: 8px; background: #0b0f19; display: flex; justify-content: center; align-items: center;}
+.pitch { width: 100%; height: 100%; background: linear-gradient(180deg, #238b36 0%, #176524 100%); border: 2px solid rgba(255, 255, 255, 0.6); border-radius: 4px; position: relative; display: flex; flex-direction: column; justify-content: space-evenly; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5) inset; }
+.pitch::before { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: rgba(255, 255, 255, 0.4); transform: translateY(-50%); }
+.pitch::after { content: ''; position: absolute; top: 50%; left: 50%; width: 35px; height: 35px; border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 50%; transform: translate(-50%, -50%); }
+.pitch-row { display: flex; justify-content: space-around; align-items: center; width: 100%; z-index: 2; }
+
+.player-slot { width: 28px; height: 38px; background: rgba(3, 10, 30, 0.85); border: 1px dashed #94a3b8; border-radius: 4px; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: all 0.2s ease; }
+.slot-pos { color: #94a3b8; font-size: 0.5rem; font-weight: 900; }
+.slot-icon { font-size: 0.8rem; color: #475569; margin-top: 1px; }
+
+.player-slot.occupied { background: linear-gradient(145deg, #d4af37, #aa8000); border: 1.5px solid #fff; color: white; font-size: 0.8rem; font-weight: 900; }
+.player-slot.blink { border: 2px solid #00d2ff; background: rgba(0, 210, 255, 0.6); cursor: pointer; animation: blinking 1s infinite; z-index: 10;}
+@keyframes blinking { 0% { box-shadow: 0 0 4px #00d2ff; transform: scale(1); } 50% { box-shadow: 0 0 10px #00d2ff; transform: scale(1.2); } 100% { box-shadow: 0 0 4px #00d2ff; transform: scale(1); } }
+
+/* Sağ Panel: Kadro Listesi */
+.squad-roster { width: 50%; display: flex; flex-direction: column; background: #071635; border-left: 2px solid #1e293b; padding: 6px; }
+.roster-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 4px; margin-bottom: 6px;}
+.roster-title { color: #00d2ff; font-size: 0.8rem; font-weight: 900;}
+#player-count { color: #94a3b8; font-size: 0.7rem; font-weight: bold; background: #1e293b; padding: 2px 4px; border-radius: 4px;}
+
+#roster-list { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 4px; padding-right: 2px;}
+#roster-list::-webkit-scrollbar { width: 3px; }
+#roster-list::-webkit-scrollbar-thumb { background: #00d2ff; border-radius: 10px; }
+
+.roster-item { display: flex; justify-content: space-between; align-items: center; background: rgba(3, 10, 30, 0.6); padding: 4px 6px; border-radius: 4px; border-left: 2px solid #0055ff; }
+.roster-item .r-pos { font-weight: 900; color: #00d2ff; width: 25px; font-size: 0.65rem;}
+.roster-item .r-name { color: white; flex: 1; font-weight: 600; font-size: 0.65rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.roster-item .r-rating { color: gold; font-weight: 900; font-size: 0.75rem;}
+
+/* --- ALT BÖLÜM (Kura Alanı) --- */
+.bottom-section { flex: 1; background: #030a1e; padding: 10px 15px; display: flex; flex-direction: column; align-items: center; overflow: hidden; position: relative; }
+.action-button { width: 100%; padding: 14px; font-size: 0.9rem; font-weight: 900; color: white; background: linear-gradient(90deg, #0055ff, #00d2ff); border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 15px rgba(0, 85, 255, 0.4); margin-top: 10px; flex-shrink: 0;}
+.hidden { display: none !important; }
+
+#draft-animation { color: #00d2ff; font-size: 1.4rem; font-weight: 900; animation: pulse 0.3s infinite alternate; text-align: center; margin-top: 20px;}
+@keyframes pulse { from { transform: scale(0.95); opacity: 0.8; } to { transform: scale(1.05); opacity: 1; text-shadow: 0 0 10px #00d2ff;} }
+
+#player-selection-list { width: 100%; display: flex; flex-direction: column; gap: 6px; flex: 1; overflow-y: auto; padding-right: 5px; margin-top: 5px;}
+#player-selection-list::-webkit-scrollbar { width: 4px; }
+#player-selection-list::-webkit-scrollbar-thumb { background: #0055ff; border-radius: 10px; }
+
+.draft-player-card { display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 8px 12px; border-radius: 8px; border: 1px solid #334155; cursor: pointer; transition: 0.2s; flex-shrink: 0; }
+.draft-player-card:hover:not(.disabled) { background: #0055ff; border-color: #00d2ff;}
+.draft-player-card.disabled { opacity: 0.4; cursor: not-allowed; background: #0f172a; }
+.p-name { color: white; font-weight: 800; font-size: 0.85rem; }
+.p-pos { color: #94a3b8; font-size: 0.7rem; margin-left: 5px; }
+.p-rating { background: #d4af37; color: #000; padding: 2px 6px; border-radius: 4px; font-weight: 900; font-size: 0.85rem; }
+
+#status-text { color: #10b981; font-weight: bold; text-align: center; margin-top: 10px; font-size: 0.85rem; animation: blink-text 1.5s infinite; flex-shrink: 0;}
+@keyframes blink-text { 0%, 100% { opacity: 1;} 50% { opacity: 0.5;} }

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takım Seçimi - 2026 Dünya Kupası</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="phone-wrapper">
+        
+        <div id="welcome-modal" class="modal-overlay">
+            <div class="modal-content">
+                <h2 class="modal-title">DÜNYA KUPASI SİMÜLATÖRÜ</h2>
+                <ul class="modal-steps">
+                    <li><span class="step-num">1</span> Temsil edeceğin ülkeyi seç.</li>
+                    <li><span class="step-num">2</span> En güçlü kadronu kur ve taktiğini belirle.</li>
+                    <li><span class="step-num">3</span> Maçları simüle et ve Dünya Kupası'nı kazan!</li>
+                </ul>
+                <button id="start-game-btn" class="play-btn">OYNA</button>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <h1>2026 DÜNYA KUPASI</h1>
+            <p class="subtitle">Ülkeni Seç</p>
+        </header>
+        
+        <main class="groups-grid">
+            
+            <div class="group-card">
+                <div class="group-title">GRUP A</div>
+                <div class="teams-container">
+                    <button class="team-slot" data-team="MEX"><img src="flags/mexico.jpg" class="team-flag" alt="MEX"><span class="team-code">MEX</span></button>
+                    <button class="team-slot" data-team="RSA"><img src="flags/south-africa.jpg" class="team-flag" alt="RSA"><span class="team-code">RSA</span></button>
+                    <button class="team-slot" data-team="KOR"><img src="flags/south-korea.jpg" class="team-flag" alt="KOR"><span class="team-code">KOR</span></button>
+                    <button class="team-slot" data-team="CZE"><img src="flags/czech.jpg" class="team-flag" alt="CZE"><span class="team-code">CZE</span></button>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-title">GRUP B</div>
+                <div class="teams-container">
+                    <button class="team-slot" data-team="CAN"><img src="flags/canada.jpg" class="team-flag" alt="CAN"><span class="team-code">CAN</span></button>
+                    <button class="team-slot" data-team="BIH"><img src="flags/bosnia.jpg" class="team-flag" alt="BIH"><span class="team-code">BIH</span></button>
+                    <button class="team-slot" data-team="QAT"><img src="flags/qatar.jpg" class="team-flag" alt="QAT"><span class="team-code">QAT</span></button>
+                    <button class="team-slot" data-team="SUI"><img src="flags/switzerland.jpg" class="team-flag" alt="SUI"><span class="team-code">SUI</span></button>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-title">GRUP C</div>
+                <div class="teams-container">
+                    <button class="team-slot" data-team="BRA"><img src="flags/brazil.jpg" class="team-flag" alt="BRA"><span class="team-code">BRA</span></button>
+                    <button class="team-slot" data-team="MAR"><img src="flags/morocco.jpg" class="team-flag" alt="MAR"><span class="team-code">MAR</span></button>
+                    <button class="team-slot" data-team="HTI"><img src="flags/haiti.jpg" class="team-flag" alt="HTI"><span class="team-code">HTI</span></button>
+                    <button class="team-slot" data-team="SCO"><img src="flags/scotland.jpg" class="team-flag" alt="SCO"><span class="team-code">SCO</span></button>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-title">GRUP D</div>
+                <div class="teams-container">
+                    <button class="team-slot" data-team="USA"><img src="flags/usa.jpg" class="team-flag" alt="USA"><span class="team-code">USA</span></button>
+                    <button class="team-slot" data-team="PAR"><img src="flags/paraguay.jpg" class="team-flag" alt="PAR"><span class="team-code">PAR</span></button>
+                    <button class="team-slot" data-team="AUS"><img src="flags/australia.jpg" class="team-flag" alt="AUS"><span class="team-code">AUS</span></button>
+                    <button class="team-slot" data-team="TUR"><img src="flags/turkey.jpg" class="team-flag" alt="TUR"><span class="team-code">TUR</span></button>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-title">GRUP E</div>
+                <div class="teams-container">
+                    <button class="team-slot" data-team="GER"><img src="flags/germany.jpg" class="team-flag" alt="GER"><span class="team-code">GER</span></button>
+                    <button class="team-slot" data-team="CUW"><img src="flags/curacao.jpg" class="team-flag" alt="CUW"><span class="team-code">CUW</span></button>
+                    <button class="team-slot" data-team="CIV"><img src="flags/ivory-coast.jpg" class="team-flag" alt="CIV"><span class="team-code">CIV</span></button>
+                    <button class="team-slot" data-team="ECU"><img src="flags/equador.jpg" class="team-flag" alt="ECU"><span class="team-code">ECU</span></button>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-title">GRUP F</div>
+                <div class="teams-container">
+                    <button class="team-slot" data-team="NED"><img src="flags/netherlands.jpg" class="team-flag" alt="NED"><span class="team-code">NED</span></button>
+                    <button class="team-slot" data-team="JPN"><img src="flags/japan.jpg" class="team-flag" alt="JPN"><span class="team-code">JPN</span></button>
+                    <button class="team-slot" data-team="SWE"><img src="flags/sweden.jpg" class="team-flag" alt="SWE"><span class="team-code">SWE</span></button>
+                    <button class="team-slot" data-team="TUN"><img src="flags/tunisia.jpg" class="team-flag" alt="TUN"><span class="team-code">TUN</span></button>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-title">GRUP G</div>
+                <div class="teams-container">
+                    <button class="team-slot" data-team="BEL"><img src="flags/belgium.jpg" class="team-flag" alt="BEL"><span class="team-code">BEL</span></button>
+                    <button class="team-slot" data-team="EGY"><img src="flags/egypt.jpg" class="team-flag" alt="EGY"><span class="team-code">EGY</span></button>
+                    <button class="team-slot" data-team="IRN"><img src="flags/iran.jpg" class="team-flag" alt="IRN"><span class="team-code">IRN</span></button>
+                    <button class="team-slot" data-team="NZL"><img src="flags/new-zealand.jpg" class="team-flag" alt="NZL"><span class="team-code">NZL</span></button>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-title">GRUP H</div>
+                <div class="teams-container">
+                    <button class="team-slot" data-team="ESP"><img src="flags/spain.jpg" class="team-flag" alt="ESP"><span class="team-code">ESP</span></button>
+                    <button class="team-slot" data-team="CPV"><img src="flags/cape-verde.jpg" class="team-flag" alt="CPV"><span class="team-code">CPV</span></button>
+                    <button class="team-slot" data-team="KSA"><img src="flags/saudi.jpg" class="team-flag" alt="KSA"><span class="team-code">KSA</span></button>
+                    <button class="team-slot" data-team="URU"><img src="flags/uruguay.jpg" class="team-flag" alt="URU"><span class="team-code">URU</span></button>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-title">GRUP I</div>
+                <div class="teams-container">
+                    <button class="team-slot" data-team="FRA"><img src="flags/france.jpg" class="team-flag" alt="FRA"><span class="team-code">FRA</span></button>
+                    <button class="team-slot" data-team="SEN"><img src="flags/senegal.jpg" class="team-flag" alt="SEN"><span class="team-code">SEN</span></button>
+                    <button class="team-slot" data-team="IRQ"><img src="flags/iraq.jpg" class="team-flag" alt="IRQ"><span class="team-code">IRQ</span></button>
+                    <button class="team-slot" data-team="NOR"><img src="flags/norway.jpg" class="team-flag" alt="NOR"><span class="team-code">NOR</span></button>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-title">GRUP J</div>
+                <div class="teams-container">
+                    <button class="team-slot" data-team="ARG"><img src="flags/argentina.jpg" class="team-flag" alt="ARG"><span class="team-code">ARG</span></button>
+                    <button class="team-slot" data-team="ALG"><img src="flags/algeria.jpg" class="team-flag" alt="ALG"><span class="team-code">ALG</span></button>
+                    <button class="team-slot" data-team="AUT"><img src="flags/austria.jpg" class="team-flag" alt="AUT"><span class="team-code">AUT</span></button>
+                    <button class="team-slot" data-team="JOR"><img src="flags/jordan.jpg" class="team-flag" alt="JOR"><span class="team-code">JOR</span></button>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-title">GRUP K</div>
+                <div class="teams-container">
+                    <button class="team-slot" data-team="POR"><img src="flags/portugal.jpg" class="team-flag" alt="POR"><span class="team-code">POR</span></button>
+                    <button class="team-slot" data-team="COD"><img src="flags/congo.jpg" class="team-flag" alt="COD"><span class="team-code">COD</span></button>
+                    <button class="team-slot" data-team="UZB"><img src="flags/turkmenistan.jpg" class="team-flag" alt="UZB"><span class="team-code">UZB</span></button>
+                    <button class="team-slot" data-team="COL"><img src="flags/colombia.jpg" class="team-flag" alt="COL"><span class="team-code">COL</span></button>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-title">GRUP L</div>
+                <div class="teams-container">
+                    <button class="team-slot" data-team="ENG"><img src="flags/england.jpg" class="team-flag" alt="ENG"><span class="team-code">ENG</span></button>
+                    <button class="team-slot" data-team="CRO"><img src="flags/croatia.jpg" class="team-flag" alt="CRO"><span class="team-code">CRO</span></button>
+                    <button class="team-slot" data-team="GHA"><img src="flags/ghana.jpg" class="team-flag" alt="GHA"><span class="team-code">GHA</span></button>
+                    <button class="team-slot" data-team="PAN"><img src="flags/panama.jpg" class="team-flag" alt="PAN"><span class="team-code">PAN</span></button>
+                </div>
+            </div>
+
+        </main>
+        
+        <div class="action-area">
+            <button id="confirm-btn" class="confirm-button" disabled>ÜLKE SEÇ</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

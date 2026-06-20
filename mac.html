@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canlı Maç - 2026 Dünya Kupası</title>
+    <link rel="stylesheet" href="mac.css">
+</head>
+<body>
+    <div class="phone-wrapper">
+        
+        <header class="match-header">
+            <div class="competition-name">2026 FIFA WORLD CUP™</div>
+            <div class="matchday-info" id="matchday-text">GRUP AŞAMASI - 1. MAÇ</div>
+        </header>
+
+        <div class="scoreboard-container">
+            <div class="team-panel left">
+                <img id="home-flag" src="" alt="Home Flag" class="big-flag">
+                <h2 id="home-code">--</h2>
+            </div>
+            
+            <div class="score-panel">
+                <div class="time-indicator" id="match-timer">0'</div>
+                <div class="score-numbers">
+                    <span id="home-score">0</span>
+                    <span class="divider">-</span>
+                    <span id="away-score">0</span>
+                </div>
+            </div>
+
+            <div class="team-panel right">
+                <img id="away-flag" src="" alt="Away Flag" class="big-flag">
+                <h2 id="away-code">--</h2>
+            </div>
+        </div>
+
+        <div class="match-events-container">
+            <h3 class="events-title">MAÇ ÖZETİ</h3>
+            <div id="events-list" class="events-list">
+                </div>
+        </div>
+
+        <div class="bottom-action">
+            <button id="finish-match-btn" class="action-button hidden">MAÇI BİTİR VE GRUBA DÖN</button>
+        </div>
+
+    </div>
+    <script src="mac.js"></script>
+</body>
+</html>

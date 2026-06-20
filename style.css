@@ -1,0 +1,299 @@
+/* Temel Sıfırlamalar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #0b0f19;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+/* 9:16 Akıllı Telefon Kapsayıcısı */
+.phone-wrapper {
+    position: relative; /* Modalın ekranın içinde kalması için eklendi */
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 9 / 16;
+    background: linear-gradient(180deg, #071635 0%, #030a1e 100%);
+    border: 6px solid #1e293b;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- Başlangıç Bilgilendirme Ekranı (Modal) --- */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 10, 30, 0.65);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.modal-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #0d2353, #081535);
+    border: 2px solid #0055ff;
+    border-radius: 20px;
+    padding: 24px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 85, 255, 0.3) inset;
+    transform: translateY(0);
+    transition: transform 0.4s ease;
+}
+
+.modal-overlay.hidden .modal-content {
+    transform: translateY(-20px) scale(0.95);
+}
+
+.modal-title {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #00d2ff;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+    border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.modal-steps {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.modal-steps li {
+    color: #e2e8f0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+}
+
+.step-num {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 24px;
+    height: 24px;
+    background: #0055ff;
+    color: white;
+    border-radius: 50%;
+    font-weight: 800;
+    margin-right: 12px;
+    box-shadow: 0 0 8px rgba(0, 85, 255, 0.6);
+}
+
+.play-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: white;
+    background: linear-gradient(90deg, #10b981, #059669);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    letter-spacing: 2px;
+    transition: all 0.2s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+}
+
+/* Sabit Üst Başlık ve Alt Başlık */
+.main-header {
+    background: rgba(10, 25, 60, 0.8);
+    padding: 16px 10px 12px 10px;
+    text-align: center;
+    border-bottom: 2px solid #0055ff;
+    backdrop-filter: blur(10px);
+}
+
+.main-header h1 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(0, 110, 255, 0.6);
+}
+
+.subtitle {
+    color: #e2e8f0;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+/* 2 Sütunlu Kaydırılabilir Grup Tablosu */
+.groups-grid {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+/* Tarayıcı Kaydırma Çubuğunu Özelleştirme */
+.groups-grid::-webkit-scrollbar {
+    width: 4px;
+}
+.groups-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+.groups-grid::-webkit-scrollbar-thumb {
+    background: #0055ff;
+    border-radius: 10px;
+}
+
+/* Grup Kartları */
+.group-card {
+    background: linear-gradient(145deg, #0d2353, #081535);
+    border: 1px solid #1e40af;
+    border-radius: 12px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.group-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #00d2ff;
+    background: rgba(0, 210, 255, 0.1);
+    padding: 3px 0;
+    width: 100%;
+    text-align: center;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Ülkelerin Yan Yana Sıralandığı Alan */
+.teams-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 2px;
+}
+
+/* Ülke Seçim Butonları */
+.team-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.team-slot:hover {
+    background: rgba(0, 85, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.team-slot.selected {
+    background: rgba(0, 210, 255, 0.2);
+    border: 1px solid #00d2ff;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.4) inset;
+    transform: scale(1.05);
+}
+
+.team-slot.selected .team-flag {
+    border-color: #00d2ff;
+    box-shadow: 0 0 12px #00d2ff;
+}
+
+/* Bayrak Resimleri */
+.team-flag {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    margin-bottom: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    background-color: #334155;
+    display: block;
+    transition: all 0.2s ease-in-out;
+}
+
+.team-code {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- Alt Taraftaki Onay Butonu Alanı --- */
+.action-area {
+    padding: 10px 16px 16px 16px;
+    background: #030a1e;
+    border-top: 1px solid #1e293b;
+}
+
+.confirm-button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: white;
+    background: linear-gradient(90deg, #0055ff, #00d2ff);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 85, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.confirm-button:disabled {
+    background: #334155;
+    color: #94a3b8;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.confirm-button:not(:disabled):hover {
+    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6);
+    transform: translateY(-2px);
+}
